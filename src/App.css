@@ -1,4 +1,10 @@
-.App {
+@import '~antd/dist/antd.css';
+
+.logo {
+  background-image: url(logo.png);
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -25,7 +31,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #61dafb; 
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+}*/

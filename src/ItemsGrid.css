@@ -1,0 +1,5 @@
+.grid-item-wrapper {
+    display: grid;
+    grid-template-columns: 397px 397px 397px;
+    gap: 30px;
+}
