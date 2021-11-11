@@ -9,10 +9,10 @@ import "./Input.css"
 export default () => {
     return (
         <div>
-        <div className='input-wrapper'>
-            <input className='search-input' type='text' placeholder='Find pokemon'></input>
-            <button type='button' className='search-button'>Search</button>
-        </div>
+            <div className='input-wrapper'>
+                <input className='search-input' type='text' placeholder='Find pokemon'></input>
+                <button type='button' className='search-button'>Search</button>
+            </div>
         </div>
         // <Space direction="vertical">
         // <Search
