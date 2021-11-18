@@ -2,4 +2,14 @@
     display: grid;
     grid-template-columns: 397px 397px 397px;
     gap: 30px;
+    margin-left: 60px;
+    margin-bottom: 200px;
+}
+.item-wrapper {
+    display: block;
+    width: 397px;
+    height: 365px;
+    border: 1px solid #A5A5A5;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
