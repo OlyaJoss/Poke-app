@@ -8,7 +8,7 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-    <div>
+    <div className='page-wrapper'>
       <Header />
       <MainPage />
       <Routes>

@@ -13,3 +13,22 @@
     box-sizing: border-box;
     border-radius: 5px;
 }
+
+.picture {
+    padding-top: 37px;
+    padding-left: 88px;
+    width: 210px;
+}
+
+.name {
+    font-family: 'Roboto', serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: center;
+    color: #000000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
