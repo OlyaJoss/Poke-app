@@ -2,28 +2,28 @@ import React from "react";
 import "./Input.css"
 // import { Input, Space } from 'antd';
 
+export default class Input extends React.Comment {
+    state = {
+        inputValue: '',
+    };
 
+    handleChange = (evt) => {
+        const queryValue = evt.target.value;
+        this.setState({ inputValue: queryValue });
+        this.props.onSearchChange(queryValue)
+    }
 
-// const { Search } = Input;
-// const onSearch = value => console.log(value);
-export default () => {
-    return (
-        <div>
-            <div className='input-wrapper'>
-                <input className='search-input' type='text' placeholder='Find pokemon'></input>
-                <button type='button' className='search-button'>Search</button>
+    render(){
+        return(
+            <div>
+                <div className='input-wrapper'>
+                    <input
+                        onChange={this.handleChange}
+                        value={this.state.inputValue}
+                        className='search-input' type='text' placeholder='Find pokemon'></input>
+                    <button type='button' className='search-button'>Search</button>
+                </div>
             </div>
-        </div>
-        // <Space direction="vertical">
-        // <Search
-        //       placeholder="Find pokemon"
-        //       allowClear
-        //       enterButton="Search"
-        //       size="large"
-        //       color="#E5E5E5"
-        //       onSearch={onSearch}
-        //       style={{ backgroundColor: 'background: '}}
-        //     />
-        // </Space>
-    );
+        );
+    }
 }
