@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ItemsGrid.css"
 
 export default function ItemsGrid({ itemsData }) {
@@ -9,15 +9,18 @@ export default function ItemsGrid({ itemsData }) {
     }
 
     return (
+        
         <div className='grid-item-wrapper'>
             {(itemsData && itemsData.map(({ name, url }) => {
                 const id = extractId(url)
                 return (
                     <div className='item-wrapper' key={id}>
+                         <Link to='/pokemon'>
                         <img className='picture'
                             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
                             alt={name}></img>
                         <p className='name'>{name}</p>
+                        </Link>
                     </div>
                 )
             }

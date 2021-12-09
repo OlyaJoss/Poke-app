@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
     <div className='page-wrapper'>
       <Header />
-      <MainPage />
+      {/* <MainPage /> */}
       <Routes>
-        {/* <Route path='/' element={<MainPage/>}/> */}
+        <Route path='/' element={<MainPage/>}/>
         <Route path='/pokemon' element={<PokemonPage/>}/>
       </Routes>
     </div>

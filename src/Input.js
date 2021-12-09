@@ -2,7 +2,7 @@ import React from "react";
 import "./Input.css"
 // import { Input, Space } from 'antd';
 
-export default class Input extends React.Comment {
+export default class Input extends React.Component{
     state = {
         inputValue: '',
     };
