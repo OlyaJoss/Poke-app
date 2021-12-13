@@ -11,7 +11,7 @@ export default class MainPage extends Component {
     }
 
     getData = () => {
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=1300")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=9")
             .then(res => res.json())
             .then(data => {
                 this.setState({ pokeData: data.results })

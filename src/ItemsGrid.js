@@ -15,7 +15,7 @@ export default function ItemsGrid({ itemsData }) {
                 const id = extractId(url)
                 return (
                     <div className='item-wrapper' key={id}>
-                         <Link to='/pokemon'>
+                         <Link to={`/pokemon/${id}`}>
                         <img className='picture'
                             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
                             alt={name}></img>
