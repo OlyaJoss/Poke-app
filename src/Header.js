@@ -17,7 +17,7 @@ background-color: #806BFF;
 export default () => {
     return (
         <Header>
-            <Link to='/'><img src='./logo.png' /></Link>
+            <Link to='/'><img src='/logo.png' /></Link>
         </Header>
     );
 }
