@@ -24,22 +24,22 @@ const PokemonPage = () => {
         <div>
             <div className='pokemon-item-wrapper'>
                 <div className='picture-wrapper'>
-                    <img src={data.sprites && data.sprites.other["official-artwork"].front_default} alt={data.name} />
+                    <img src={data.sprites && data.sprites.other["official-artwork"].front_default} alt={data.name} width='312px' height='312px'/>
                 </div>
                 <div className='description-wrapper'>
-                    <h1>{data.name}</h1>
-                    <h2>Description header</h2>
+                    <h1 className='pokemon-name'>{data.name}</h1>
+                    <h2 className='stats'>stats</h2>
                     <ul className='description-list'>
-                        <li><p>HP:<span>{data.stats[0].base_stat}</span></p></li>
-                        <li><p>attack:<span>{data.stats[1].base_stat}</span></p></li>
-                        <li><p>deffence:<span>{data.stats[2].base_stat}</span></p></li>
-                        <li><p>special attack:<span>{data.stats[3].base_stat}</span></p></li>
-                        <li><p>special deffence:<span>{data.stats[4].base_stat}</span></p></li>
-                        <li><p>speed:<span>{data.stats[5].base_stat}</span></p></li>
+                        <li><p className='stats-item'>hp: <span className='stats-item-number'>{data.stats[0].base_stat}</span></p></li>
+                        <li><p className='stats-item'>attack: <span className='stats-item-number'>{data.stats[1].base_stat}</span></p></li>
+                        <li><p className='stats-item'>deffence: <span className='stats-item-number'>{data.stats[2].base_stat}</span></p></li>
+                        <li><p className='stats-item'>special attack: <span className='stats-item-number'>{data.stats[3].base_stat}</span></p></li>
+                        <li><p className='stats-item'>special deffence: <span className='stats-item-number'>{data.stats[4].base_stat}</span></p></li>
+                        <li><p className='stats-item'>speed: <span className='stats-item-number'>{data.stats[5].base_stat}</span></p></li>
                     </ul>
                 </div>
             </div>
-            <Link to='/main'></Link>
+            <Link to='/' className='link-back'> &lt; BACK </Link>
         </div>
     );
 }
