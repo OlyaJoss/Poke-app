@@ -1,23 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import logo from "./logo.png";
 
-const Header = styled.div`
-display: block;
-min-width: 100%;
-height: 134px;
-background-color: #806BFF;
-`
+const headerStyles = {
+    'display': 'block',
+    'min-width': '100%',
+    'height': '134px',
+    'background-color': '#806BFF',
+}
+
+const logoStyles = {
+'padding': '20px',
+}
 
 // const Img = styled.img`
-// padding-left: 20px;
+// : 20px;
 // padding-top: 20px;
 // `
 
 export default () => {
     return (
-        <Header>
-            <Link to='/'><img src='./logo.png' /></Link>
-        </Header>
+        <header style={headerStyles}>
+            <Link to='/'><img src={logo} style={logoStyles}/></Link>
+        </header>
     );
 }

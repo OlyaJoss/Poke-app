@@ -1,48 +1,59 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import ItemsGrid from "./ItemsGrid"
 import Input from "./Input"
 
 
 
-export default class MainPage extends Component {
-    state = {
-        pokeData: null,
-        query: '',
-    }
+const MainPage = () => {
+    const [pokeData, setPokeData] = useState(null);
+    const [query, setQuery] = useState('');
+    const [currentUrl, setCurrentUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=30');
+    const [nextUrl, setNextUrl] = useState(null);
+    const [previousUrl, setPreviousUrl] = useState(null);
 
-    getData = () => {
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=9")
+
+    useEffect(() => {
+        fetch(currentUrl)
             .then(res => res.json())
             .then(data => {
-                this.setState({ pokeData: data.results })
+                setPokeData(data.results);
+                setNextUrl(data.next);
+                setPreviousUrl(data.previous);
             });
-    };
-    componentDidMount() {
-        this.getData()
+    }, [currentUrl]);
+
+    const goToNextPage = () => {
+        setCurrentUrl(nextUrl)
     }
 
-    onSearchChange = (newQuery) => {
-            this.setState({query: newQuery});
+    const goToPreviousPage = () => {
+        setCurrentUrl(previousUrl)
     }
 
-    search = (items, query) => {
-        if(query === '') {
+    const onSearchChange = (newQuery) => {
+        setQuery(newQuery);
+    }
+
+    const search = (items, query) => {
+        if (query === '') {
             return items
         }
         return items.filter((el) => el.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
     }
 
-    render() {
-        const { pokeData, query } = this.state;
-        if (pokeData === null) {
-            return null;
-        };
-        const visibleItems = this.search(pokeData, query);
-        return (
-            <div>
-                <Input onSearchChange={this.onSearchChange}/>
-                <ItemsGrid itemsData={visibleItems} />
-            </div>
-        )
-    }
+    if (pokeData === null) {
+        return null;
+    };
+    const visibleItems = search(pokeData, query);
+    return (
+        <div>
+            <Input onSearchChange={onSearchChange} />
+            <ItemsGrid itemsData={visibleItems} />
+            <p>
+                {previousUrl && <button onClick={goToPreviousPage}> &lt; PREVIOUS </button>}
+                {nextUrl && <button onClick={goToNextPage}> NEXT &gt; </button>}
+            </p>
+        </div>
+    )
 }
+export default MainPage

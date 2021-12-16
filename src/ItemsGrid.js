@@ -25,10 +25,6 @@ export default function ItemsGrid({ itemsData }) {
                 )
             }
             ))}
-            <p>
-            <Link to='/'> &lt; PREVIOUS </Link>
-            <Link to='/'> NEXT &gt; </Link>
-            </p>
         </div>
     )
 }
