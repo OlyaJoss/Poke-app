@@ -1,0 +1,15 @@
+.button-wrapper {
+margin-bottom: 250px;
+margin-left: 560px;
+}
+
+.button {
+    font-family: Roboto;
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 59px;
+    color: #806BFF;
+    background-color: transparent;
+    border: none;
+}

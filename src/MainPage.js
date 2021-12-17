@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ItemsGrid from "./ItemsGrid"
-import Input from "./Input"
+import ItemsGrid from "./ItemsGrid";
+import Input from "./Input";
+import "./MainPage.css"
 
 
 
@@ -49,9 +50,9 @@ const MainPage = () => {
         <div>
             <Input onSearchChange={onSearchChange} />
             <ItemsGrid itemsData={visibleItems} />
-            <p>
-                {previousUrl && <button onClick={goToPreviousPage}> &lt; PREVIOUS </button>}
-                {nextUrl && <button onClick={goToNextPage}> NEXT &gt; </button>}
+            <p className='button-wrapper'>
+                {previousUrl && <button onClick={goToPreviousPage} className='button'> &lt; PREVIOUS </button>}
+                {nextUrl && <button onClick={goToNextPage} className='button'> NEXT &gt; </button>}
             </p>
         </div>
     )
