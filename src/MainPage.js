@@ -45,6 +45,7 @@ const MainPage = () => {
     if (pokeData === null) {
         return null;
     };
+    
     const visibleItems = search(pokeData, query);
     return (
         <div>
